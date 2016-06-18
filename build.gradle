@@ -30,13 +30,17 @@ repositories {
 }
 
 
-dependencies {	
-	compile('org.springframework.boot:spring-boot-starter-web')
-	runtime('com.h2database:h2')
+dependencies {
+   	compile("org.springframework.boot:spring-boot-starter")
+	compile("org.springframework:spring-jdbc")
+    compile("com.h2database:h2")
+    testCompile("junit:junit")
+    	
+	compile('org.springframework.boot:spring-boot-starter-web')	
 	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile("org.springframework.boot:spring-boot-devtools")
-	testCompile('org.springframework.boot:spring-boot-starter-test') 
-	
+        
+	testCompile('org.springframework.boot:spring-boot-starter-test') 	
 }
 
 test {
