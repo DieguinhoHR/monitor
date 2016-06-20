@@ -2,15 +2,24 @@ package edu.uniritter.monitor.infrastrutucture.persistence;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+
 import edu.uniritter.monitor.domain.metrica.Metrica;
-import edu.uniritter.monitor.domain.metrica.MetricaRepository;
 
-public class MetricaPersistence implements MetricaRepository {	
-	public void salvar(Metrica metrica) {
-		
+@Component
+public class MetricaPersistence {
+	private JdbcTemplate jdbcTemplate;
+	
+	@Autowired
+	public MetricaPersistence(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;		
 	}
-
-	public List<Metrica> buscarTodos() {
-		return null;
+	
+	public List<Metrica> getMetricas() {
+		return this.jdbcTemplate.query(
+		    "SELECT id, nome, dataDeCriacao FROM metrica ORDER BY id DESC", 
+				new MetricaRowMapper());
 	}
 }

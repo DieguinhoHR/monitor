@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface MetricaRepository {
 	public void salvar(Metrica metrica);
-	public List<Metrica> buscarTodos();
+	public List<Metrica> getMetricas();
 }

@@ -7,8 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import edu.uniritter.monitor.domain.metrica.Metrica;
 
-public class MetricaRowMapper implements RowMapper<Metrica> {		
-	@Override
+public class MetricaRowMapper implements RowMapper<Metrica> {
 	public Metrica mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 		return new Metrica(
 			resultSet.getLong("id"), 
