@@ -1,0 +1,3 @@
+2016-07-01 21:18:21 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "METRICA" not found; SQL statement:
+SELECT id, nome, dataDeCriacao FROM metrica ORDER BY id DESC [42102-191]
